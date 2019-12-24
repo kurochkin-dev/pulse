@@ -1,0 +1,21 @@
+@media (max-width:991px) {
+    
+    .promo {
+        display: inline-block;
+        width: 750px;
+        height: auto;
+    }
+    .advantages {
+        .advantages__icons {
+        }
+    }
+}
+
+@media (max-width:767px) {
+    .promo {
+        width: 450px; 
+        .header__official {
+            transform: translate(-160px, 10px);
+        }
+    }
+}
