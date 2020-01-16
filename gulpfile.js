@@ -7,7 +7,7 @@ const rename = require("gulp-rename");
 const imagemin = require('gulp-imagemin');
 const htmlmin = require('gulp-htmlmin');
 
-gulp.task('server', function() {
+gulp.task('server', function () {
 
     browserSync({
         server: {
@@ -18,7 +18,7 @@ gulp.task('server', function() {
     gulp.watch("src/*.html").on('change', browserSync.reload);
 });
 
-gulp.task('styles', function() {
+gulp.task('styles', function () {
     return gulp.src("src/sass/**/*.+(scss|sass)")
         .pipe(sass({outputStyle: 'compressed'}).on('error', sass.logError))
         .pipe(rename({suffix: '.min', prefix: ''}))
@@ -28,7 +28,7 @@ gulp.task('styles', function() {
         .pipe(browserSync.stream());
 });
 
-gulp.task('watch', function() {
+gulp.task('watch', function () {
     gulp.watch("src/sass/**/*.+(scss|sass|css)", gulp.parallel('styles'));
     gulp.watch("src/*.html").on('change', gulp.parallel('html'));
 });
